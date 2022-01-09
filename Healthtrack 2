@@ -1,0 +1,97 @@
+[(none)]> create database dbemail;
+Query OK, 1 row affected (0.001 sec)
+
+[(none)]> create database dbconfiguracao;
+Query OK, 1 row affected (0.001 sec)
+
+[(none)]> create database dbtreinos;
+Query OK, 1 row affected (0.001 sec)
+
+[(none)]> create database dbalimentacao;
+Query OK, 1 row affected (0.001 sec)
+
+[(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dbconfiguracao     |
+| dbalimentos        |
+| dbtreinos          |
+| dbemail            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
++--------------------+
+8 rows in set (0.001 sec)
+
+(none)]> use dbemail;
+Database changed
+[dbusuario]> create table usuario ( nome varchar(40), id_usuario int);
+Query OK, 0 rows affected (0.058 sec)
+
+[dbemail> show tables;
++---------------------+
+| Tables_in_dbemail|
++---------------------+
+| email            |
++---------------------+
+1 row in set (0.000 sec)
+
+dbemail]> select * from email;
+Empty set (0.031 sec)
+
+[dbemail]> insert into usuario ( nome, id_usuario) values ("joana",27);
+Query OK, 1 row affected (0.009 sec)
+
+dbemail]> select * from usuario;
++---------+------------+
+| nome    | id_usuario |
++---------+------------+
+| joana |         27 |
++---------+------------+
+1 row in set (0.000 sec)
+
+[dbemail]> create table configurar ( altura int, peso int, idade int);
+Query OK, 0 rows affected (0.042 sec)
+
+dbemail]> insert into configurar (altura, peso, idade) values (185,79,19);
+Query OK, 1 row affected (0.034 sec)
+
+[dbemail]> select * from configurar;
++--------+------+-------+
+| altura | peso | idade |
++--------+------+-------+
+|    185|   79 |    19 |
++--------+------+-------+
+1 row in set (0.000 sec)
+
+[bemail]> create table treinos (id_treino int, intensidade int);
+Query OK, 0 rows affected (0.045 sec)
+
+[Tables_in_dbemail]> insert into treinos (id_treino, intensidade) values (1234,2);
+Query OK, 1 row affected (0.033 sec)
+
+[dbemail]> select * from treinos;
++-----------+-------------+
+| id_treino | intensidade |
++-----------+-------------+
+|      1234 |           2 |
++-----------+-------------+
+1 row in set (0.000 sec)
+
+dbemail> create table id_alimento (id_alimento int, nome_alimento varchar(40), calorias_diarias int);
+Query OK, 0 rows affected (0.051 sec)
+
+[dbemail]> insert into id_alimento (id_alimento, nome_alimento, calorias_diarias) values (321,"batata",2000);
+Query OK, 1 row affected (0.020 sec)
+
+[dbusuario]> select * from id_alimento;
++-------------+---------------+------------------+
+| id_alimento | nome_alimento | calorias_diarias |
++-------------+---------------+------------------+
+|          110|    tapioca    |              700 |
++-------------+---------------+------------------+
+1 row in set (0.000 sec)
+
+
